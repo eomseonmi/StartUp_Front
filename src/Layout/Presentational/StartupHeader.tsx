@@ -6,11 +6,11 @@ import '../../css/Layout.css';
 
 const StartupHeader = () => {
   return (
-    <div>
+    <div className='header-bar'>
       <Segment 
-        className='header-bar' 
-        inverted 
-        vertical 
+        //className='header-bar' 
+        //inverted 
+        //vertical 
         style={{ padding: '2em' }}>
           <Link className="startup-link" to="/">
             <i className="gift icon"></i>

@@ -1,16 +1,11 @@
 .header-bar {
   display: flex;
   justify-content: space-between;
-  color: darkgreen;
+  background-color: darkgreen;
 }
 
 .startup-link {
   display: flex;
   color: white;
-  font-size: 32px;
-}
-
-.startup-logo {
-  display: inline-block;
   font-size: 32px;
 }
