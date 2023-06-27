@@ -2,22 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-// import Root from './Root';
-import Main from './Main';
 import './css/index.css';
 import 'semantic-ui-css/semantic.min.css';
+import SelectMessage from './Layout/Presentational/SelectMessage';
+import StartupMain from './Layout/Presentational/StartupMain';
 
 ReactDOM.render(
-  // <React.StrictMode>
-    // <RecoilRoot>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Main />} />  
-          <Route path='/' element={<Main />} />
+          <Route path='/' element={<StartupMain />} />  
+          <Route path='/selectMessage' element={<SelectMessage />} />
         </Routes>
       </BrowserRouter>,
-    // </RecoilRoot>
-  // </React.StrictMode>
   document.getElementById('root')
 );
 

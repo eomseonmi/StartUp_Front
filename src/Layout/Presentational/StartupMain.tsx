@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 import '../../css/Layout.css';
+import StartupHeader from "./StartupHeader";
 
 const StartupMain = () => {
   return (
     <>
+    <StartupHeader/>
       <div className="contents">    
         <h1 className="message">
           현대백화점의 선물카드 제작 서비스를 이용해주셔서 감사합니다.
@@ -19,18 +21,14 @@ const StartupMain = () => {
           <input type="text" placeholder="받는 이에 대한 설명 및 보내는 이의 마음을 입력하는 곳" />
         </div>
       </div>
-      <div className="buttons">
-        {/* <div>
-          <button className="massive ui left labeled icon button">
-            <i className="left arrow icon"></i>
-            이전으로
-          </button>
-        </div> */}
+      <div className="btn">
         <div>
-          <button className="massive ui right labeled icon button">
-            <i className="right arrow icon"></i>
-            다음으로
+        <Link to='/selectMessage'>
+          <button className="huge ui right labeled icon button">
+          <i className="right arrow icon"></i>                          
+              다음으로            
           </button>
+          </Link>
         </div>
       </div>
     </>
