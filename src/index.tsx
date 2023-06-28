@@ -6,12 +6,18 @@ import './css/index.css';
 import 'semantic-ui-css/semantic.min.css';
 import SelectMessage from './Layout/Presentational/SelectMessage';
 import StartupMain from './Layout/Presentational/StartupMain';
+import MakeImage from './Layout/Presentational/MakeImage';
+import SelectImage from './Layout/Presentational/SelectImage';
+import ShowGiftcard from './Layout/Presentational/ShowGiftcard';
 
 ReactDOM.render(
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<StartupMain />} />  
           <Route path='/selectMessage' element={<SelectMessage />} />
+          <Route path='/makeImage' element={<MakeImage />} />
+          <Route path='/selectImage' element={<SelectImage />} />
+          <Route path='/showGiftCard' element={<ShowGiftcard />} />
         </Routes>
       </BrowserRouter>,
   document.getElementById('root')
