@@ -21,7 +21,6 @@
   height: 450px;
   display: block;
   margin: 150px auto 0 auto;
-  border: 1px solid black;
 }
 
 .message {
@@ -51,7 +50,7 @@ input {
   margin: 80px auto 0 auto;
 }
 
-.choices{
+.choices {
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -60,6 +59,17 @@ input {
   border: 1px solid blue;
 }
 
-label {
-  font-size: 32px;
+.choice {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 24px;
+  border: 1px solid red;
+}
+
+input {
+  border: 3px solid green;
+}
+
+span {
+  border: 3px solid green;
 }

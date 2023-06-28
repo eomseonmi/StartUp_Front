@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 import StartupHeader from "./StartupHeader";
 import '../../css/Layout.css';
 
-const SelectMessage = () => {
+const SelectImage = () => {
   return (
     <>
     <StartupHeader/>
       <div className="contents">    
         <h1 className="message">
-          아래와 같은 문구가 나왔네요, 마음에 드는 문구를 골라주세요!
+          아래와 같은 엽서 이미지가가 생성됐어요, 
+          <br/>
+          마음에 드는 이미지를 골라주세요!
         </h1>
         <div className="choices">
           <label className="choice">
@@ -37,7 +39,7 @@ const SelectMessage = () => {
       </div>
       <div className="btns">
         <div>
-          <Link to = '/'>
+          <Link to = '/makeImage'>
             <button className="huge ui left labeled icon button">
               <i className="left arrow icon"></i>
               다시 만들기
@@ -45,10 +47,10 @@ const SelectMessage = () => {
           </Link>
         </div>
         <div>
-          <Link to='/makeImage'> 
+          <Link to='/showGiftcard'> 
             <button className="huge ui right labeled icon button">
               <i className="right arrow icon"></i>
-              그림 만들러 가기
+              엽서 최종본 보러가기
             </button>
           </Link>
         </div>
@@ -57,4 +59,4 @@ const SelectMessage = () => {
   )
 }
 
-export default SelectMessage;
+export default SelectImage;
