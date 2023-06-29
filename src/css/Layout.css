@@ -21,6 +21,7 @@
     height: 450px;
     display: block;
     margin: 150px auto 0 auto;
+    border: 1px solid black;
 }
 
 .message {
