@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { RecoilRoot } from 'recoil';
 import './css/index.css';
 import 'semantic-ui-css/semantic.min.css';
 import SelectMessage from './Layout/Presentational/SelectMessage';

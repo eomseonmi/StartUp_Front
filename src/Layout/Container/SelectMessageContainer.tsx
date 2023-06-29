@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from 'react';
 import SelectMessage from '../Presentational/SelectMessage';
 
 const SelectMessageContainer = () => {
-  const loadData = async () => {
-    // const response = await homeAPI.get();
-    console.log('Startup main container load data rse');
-  }
+    //const [data, setData] = useState<>([]);
+    const loadData = async () => {
+        //const response = await homeAPI.get();
+        console.log('*** selectMessageContainer Load Data Res ***');
+    };
 
-  return <SelectMessage />
-}
+    return <SelectMessage />;
+};
 
 export default SelectMessageContainer;
