@@ -3,20 +3,21 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './css/index.css';
 import 'semantic-ui-css/semantic.min.css';
-import SelectMessage from './Layout/Presentational/SelectMessage';
-import StartupMain from './Layout/Presentational/StartupMain';
-import MakeImage from './Layout/Presentational/MakeImage';
-import SelectImage from './Layout/Presentational/SelectImage';
-import ShowGiftcard from './Layout/Presentational/ShowGiftcard';
+
+import StartupMainContainer from '../src/Layout/Container/StartupMainContainer';
+import SelectMessageContainer from './Layout/Container/SelectMessageContainer';
+import MakeImageContainer from './Layout/Container/MakeImageContainer';
+import SelectImageContainer from './Layout/Container/SelectImageContainer';
+import ShowGiftcardContainer from './Layout/Container/ShowGiftcardContainer';
 
 ReactDOM.render(
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<StartupMain />} />
-            <Route path="/selectMessage" element={<SelectMessage />} />
-            <Route path="/makeImage" element={<MakeImage />} />
-            <Route path="/selectImage" element={<SelectImage />} />
-            <Route path="/showGiftCard" element={<ShowGiftcard />} />
+            <Route path="/" Component={StartupMainContainer} />
+            <Route path="/selectMessage" Component={SelectMessageContainer} />
+            <Route path="/makeImage" Component={MakeImageContainer} />
+            <Route path="/selectImage" Component={SelectImageContainer} />
+            <Route path="/showGiftcard" Component={ShowGiftcardContainer} />{' '}
         </Routes>
     </BrowserRouter>,
     document.getElementById('root')

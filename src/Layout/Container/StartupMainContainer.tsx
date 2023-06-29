@@ -2,6 +2,7 @@ import React from "react";
 import StartupMain from '../Presentational/StartupMain';
 
 const StartupMainContainer = () => {
+  alert("aa");
   const loadData = async () => {
     // const response = await homeAPI.get();
     console.log('Startup main container load data rse');

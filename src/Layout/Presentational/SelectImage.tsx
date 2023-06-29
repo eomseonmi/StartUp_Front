@@ -4,20 +4,24 @@ import { Link } from 'react-router-dom';
 import StartupHeader from "./StartupHeader";
 import '../../css/Layout.css';
 
-const SelectImage = () => {
+interface SelectImageProps {
+  imageUrl: string;
+}
+
+const SelectImage: React.FC<SelectImageProps> = ({ imageUrl }) => {
   return (
     <>
-    <StartupHeader/>
+      <StartupHeader />
       <div className="contents">    
         <h1 className="message">
-          아래와 같은 엽서 이미지가가 생성됐어요, 
-          <br/>
-          마음에 드는 이미지를 골라주세요!
+          The following postcard images have been generated,
+          <br />
+          Please choose the image you like!
         </h1>
         <div className="choices">
           <label className="choice">
             <input type="radio" />
-            <div>ddd</div>
+            <div><img src={imageUrl} alt="Selected Image" /></div>
           </label>
           <div className="choice">
             <input type="radio" name="choice1" />
@@ -39,24 +43,24 @@ const SelectImage = () => {
       </div>
       <div className="btns">
         <div>
-          <Link to = '/makeImage'>
+          <Link to="/makeImage">
             <button className="huge ui left labeled icon button">
               <i className="left arrow icon"></i>
-              다시 만들기
+              Create Again
             </button>
           </Link>
         </div>
         <div>
-          <Link to='/showGiftcard'> 
+          <Link to="/showGiftcard"> 
             <button className="huge ui right labeled icon button">
               <i className="right arrow icon"></i>
-              엽서 최종본 보러가기
+              View Final Postcard
             </button>
           </Link>
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default SelectImage;

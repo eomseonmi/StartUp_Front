@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import StartupHeader from './StartupHeader';
 import '../../css/Layout.css';
 
-const MakeImage = () => {
+
+    const MakeImage = () => {
     return (
         <>
             <StartupHeader />
@@ -34,11 +35,12 @@ const MakeImage = () => {
                     <Link to="/selectImage">
                         <button className="huge ui right labeled icon button">
                             <i className="right arrow icon"></i>
-                            그림 만들기
+                            그림 만들기gg
                         </button>
                     </Link>
                 </div>
             </div>
+           
         </>
     );
 };

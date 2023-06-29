@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '';
+const API_URL = 'http://127.0.0.1:5000/';
 const MESSAGE_URL = API_URL.concat('/');
 
 export const getRequest = async (url: string) => {
