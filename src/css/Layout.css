@@ -17,9 +17,10 @@
 
 /* StartupMain */
 .contents {
-    width: 85%;
+    width: 1000px;
+    height: 450px;
     display: block;
-    margin: 300px auto 0 auto;
+    margin: 150px auto 0 auto;
 }
 
 .message {
@@ -30,12 +31,45 @@
 }
 
 input {
-    width: 1130px;
+    width: 1000px;
     height: 80px;
 }
-.buttons {
+
+.btn {
     display: flex;
     width: 85%;
     justify-content: right;
-    margin: 300px auto 0 auto;
+    margin: 80px auto 0 auto;
+}
+
+/* SelectMessage */
+.btns {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    margin: 80px auto 0 auto;
+}
+
+.choices {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid blue;
+}
+
+.choice {
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 24px;
+    border: 1px solid red;
+}
+
+input {
+    border: 3px solid green;
+}
+
+span {
+    border: 3px solid green;
 }
