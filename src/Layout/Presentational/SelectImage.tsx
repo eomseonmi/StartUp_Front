@@ -5,10 +5,10 @@ import StartupHeader from "./StartupHeader";
 import '../../css/Layout.css';
 
 interface SelectImageProps {
-  imageUrl: string;
+  imageUrls: string[];
 }
 
-const SelectImage: React.FC<SelectImageProps> = ({ imageUrl }) => {
+const SelectImage: React.FC<SelectImageProps> = ({ imageUrls }) => {
   return (
     <>
       <StartupHeader />
@@ -20,25 +20,17 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrl }) => {
         </h1>
         <div className="choices">
           <label className="choice">
-            <input type="radio" />
-            <div><img src={imageUrl} alt="Selected Image" /></div>
+            <div className="image-container">
+            {imageUrls.map((imageUrl, index) => (
+              
+            <div className="choice">
+            <input type="radio" name={`choice ${index}`}  />
+            <label>{`choice ${index}`}</label>
+            <img key={index} src={imageUrl} alt={`Image ${index}`} />
+            </div>
+            ))}
+          </div>
           </label>
-          <div className="choice">
-            <input type="radio" name="choice1" />
-            <label>choice1</label>
-          </div>
-          <div className="ui radio checkbox choice">
-            <input type="radio" name="choice1" />
-            <label>choice2</label>
-          </div>
-          <div className="ui radio checkbox choice">
-            <input type="radio" name="choice1" />
-            <label>choice3</label>
-          </div>
-          <div className="ui radio checkbox choice">
-            <input type="radio" name="choice1" />
-            <label>choice4</label>
-          </div>
         </div>
       </div>
       <div className="btns">
