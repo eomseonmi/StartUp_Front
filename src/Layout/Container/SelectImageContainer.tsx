@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SelectImage from "../Presentational/SelectImage";
 import axios from 'axios';
+
+import SelectImage from "../Presentational/SelectImage";
 
 const SelectImageContainer = () => {
   const navigate = useNavigate();

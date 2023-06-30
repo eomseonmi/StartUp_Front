@@ -21,15 +21,14 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls }) => {
         <div className="choices">
           <label className="choice">
             <div className="image-container">
-            {imageUrls.map((imageUrl, index) => (
-              
-            <div className="choice">
-            <input type="radio" name={`choice ${index}`}  />
-            <label>{`choice ${index}`}</label>
-            <img key={index} src={imageUrl} alt={`Image ${index}`} />
+              {imageUrls.map((imageUrl, index) => (              
+                <div className="choice">
+                <input type="radio" name={`choice ${index}`}  />
+                <label>{`choice ${index}`}</label>
+                <img key={index} src={imageUrl} alt={`Image ${index}`} />
+                </div>
+              ))}
             </div>
-            ))}
-          </div>
           </label>
         </div>
       </div>
