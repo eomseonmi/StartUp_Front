@@ -14,9 +14,9 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls }) => {
       <StartupHeader />
       <div className="contents">    
         <h1 className="message">
-          The following postcard images have been generated,
-          <br />
-          Please choose the image you like!
+          아래와 같은 엽서 이미지가가 생성됐어요, 
+           <br/>
+           마음에 드는 이미지를 골라주세요!
         </h1>
         <div className="choices">
           <label className="choice">
@@ -38,7 +38,7 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls }) => {
           <Link to="/makeImage">
             <button className="huge ui left labeled icon button">
               <i className="left arrow icon"></i>
-              Create Again
+              다시 만들기
             </button>
           </Link>
         </div>
@@ -46,7 +46,7 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls }) => {
           <Link to="/showGiftcard"> 
             <button className="huge ui right labeled icon button">
               <i className="right arrow icon"></i>
-              View Final Postcard
+              엽서 최종본 보러가기
             </button>
           </Link>
         </div>
