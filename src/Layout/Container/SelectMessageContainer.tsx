@@ -1,14 +1,38 @@
-import React, { useState } from 'react';
-import SelectMessage from '../Presentational/SelectMessage';
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import SelectMessage from "../Presentational/SelectMessage";
+import axios from 'axios';
 
 const SelectMessageContainer = () => {
-    //const [data, setData] = useState<>([]);
-    const loadData = async () => {
-        //const response = await homeAPI.get();
-        console.log('*** selectMessageContainer Load Data Res ***');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [data, setData] = useState<string[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const searchParams = new URLSearchParams(location.search);
+        const description = searchParams.get('description');
+        
+        if (description) {
+          const response = await axios.get(`http://127.0.0.1:5000/getText?str=${description}`, { withCredentials: true });
+          const data = response.data;
+          const datas = data.split("##*##*");
+
+          setData(datas);
+          
+        } else {
+          alert("No description provided");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
     };
 
-    return <SelectMessage />;
+    fetchData();
+  }, [location]);
+
+  return <SelectMessage data={data} />;
 };
 
 export default SelectMessageContainer;
