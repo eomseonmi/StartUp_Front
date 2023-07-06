@@ -17,7 +17,7 @@ const SelectMessage: React.FC<SelectMessageProps> = ({ data }) => {
         <div className="choices">
           {data.map((item, index) => (
             <div className="ui radio checkbox choice" key={index}>
-              <input type="radio" name="choice1" />
+              <input type="radio" name="choice" />
               <label>{item}</label>
             </div>
           ))}

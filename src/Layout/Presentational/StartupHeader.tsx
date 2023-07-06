@@ -7,7 +7,7 @@ const StartupHeader = () => {
     return (
         <div className="header-bar">
             <Link className="startup-link" to="/">
-                <i className="gift icon"></i>
+                <i className="gift icon" />
                 <div>Hyundai GiftCard Service</div>
             </Link>
         </div>
