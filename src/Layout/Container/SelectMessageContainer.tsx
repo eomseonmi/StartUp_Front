@@ -1,34 +1,38 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-
-import SelectMessage from '../Presentational/SelectMessage';
+import { useLocation, useNavigate } from "react-router-dom";
+import SelectMessage from "../Presentational/SelectMessage";
+import axios from 'axios';
 
 const SelectMessageContainer = () => {
-    const navigate = useNavigate();
-    const [messages, setMessages] = useState<string[]>([]);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [data, setData] = useState<string[]>([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const respone = await axios.get("http://127.0.0.1:5000/getText?str=후배에게 주는 선물", {withCredentials: true});
-                const data = respone.data;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const searchParams = new URLSearchParams(location.search);
+        const description = searchParams.get('description');
+        
+        if (description) {
+          const response = await axios.get(`http://127.0.0.1:5000/getText?str=${description}`, { withCredentials: true });
+          const data = response.data;
+          const datas = data.split("##*##*");
 
-                const str =  data.split("##*##*");
-                setMessages(str);
-                
-                console.log('Startup main container load data rse');
-
-                navigate("/selectMessage");
-            } catch (error) {
-                console.error("Error", error);
-            }
-        };
+          setData(datas);
+          
+        } else {
+          alert("No description provided");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
 
     fetchData();
-    }, [navigate]);
+  }, [location]);
 
-    return <SelectMessage messages={messages}/>;
+  return <SelectMessage data={data} />;
 };
 
 export default SelectMessageContainer;

@@ -14,7 +14,7 @@ ReactDOM.render(
     <BrowserRouter>
         <Routes>
             <Route path="/" Component={StartupMainContainer} />
-            <Route path="/selectMessage" Component={SelectMessageContainer} />
+            <Route path="/selectMessage" Component={SelectMessageContainer}/>{' '}
             <Route path="/makeImage" Component={MakeImageContainer} />
             <Route path="/selectImage" Component={SelectImageContainer} />
             <Route path="/showGiftcard" Component={ShowGiftcardContainer} />{' '}

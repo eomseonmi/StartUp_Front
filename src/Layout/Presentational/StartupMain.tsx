@@ -1,10 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, ChangeEvent } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import '../../css/Layout.css';
 import StartupHeader from './StartupHeader';
 
 const StartupMain = () => {
+    const [inputValue, setInputValue] = useState(""); // 입력된 값 상태 관리
+    const location = useLocation();
+    // location.state에서 description 값을 가져옴
+    const { description } = location.state || {};
+  
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+      setInputValue(e.target.value); // 입력된 값 업데이트
+    };
+  
+    const navigate = useNavigate();
+  
+    const handleCreateText = () => {
+      const linkToSelectText = `/selectMessage?description=${encodeURIComponent(inputValue)}`;
+      navigate(linkToSelectText);
+    };
+
+
     return (
         <>
             <StartupHeader />
@@ -18,17 +35,17 @@ const StartupMain = () => {
                     (ex) 스승의날의 기념으로 고등학생 시절 담임선생님께 드릴 선물
                 </h1>
                 <div className="ui massive input">
-                    <input type="text" placeholder="받는 이에 대한 설명 및 보내는 이의 마음을 입력하는 곳" />
+                    <input type="text" placeholder="받는 이에 대한 설명 및 보내는 이의 마음을 입력하는 곳" 
+                    value={inputValue}
+                    onChange={handleInputChange}/>
                 </div>
             </div>
             <div className="btn">
                 <div>
-                    <Link to="/selectMessage">
-                        <button className="huge ui right labeled icon button">
-                            <i className="right arrow icon"></i>
-                            다음으로
-                        </button>
-                    </Link>
+                    <button className="huge ui right labeled icon button" onClick={handleCreateText}>
+                        <i className="right arrow icon"></i>
+                        다음으로
+                    </button>
                 </div>
             </div>
         </>
