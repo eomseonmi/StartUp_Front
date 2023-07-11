@@ -2,7 +2,6 @@ import React, { useState, ChangeEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import '../../css/Layout.css';
-import '../../css/StartupMain.css';
 import StartupHeader from './StartupHeader';
 
 const StartupMain = () => {
@@ -37,6 +36,7 @@ const StartupMain = () => {
                 </h1>
                 <input 
                     type="text" 
+                    className="input-box"
                     placeholder="받는 이에 대한 설명 및 보내는 이의 마음을 입력하는 곳" 
                     value={inputValue}
                     onChange={handleInputChange}
