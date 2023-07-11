@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import SelectImage from "../Presentational/SelectImage";
 import axios from 'axios';
+
+import SelectImage from "../Presentational/SelectImage";
 
 const SelectImageContainer = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const SelectImageContainer = () => {
         
         if (description) {
           alert(description);
-         // const response = await axios.get(`http://127.0.0.1:5000/getImage?str=${description}`, { withCredentials: true });
+        //  const response = await axios.get(`http://127.0.0.1:5000/getImage?str=${description}`, { withCredentials: true });
           const response = await axios.get(`http://127.0.0.1:5000/getImageTest?str=${description}`, { withCredentials: true });
           const data = response.data;
           const urls = data.split("##*##*");

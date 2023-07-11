@@ -34,11 +34,13 @@ const StartupMain = () => {
                     <br />
                     (ex) 스승의날의 기념으로 고등학생 시절 담임선생님께 드릴 선물
                 </h1>
-                <div className="ui massive input">
-                    <input type="text" placeholder="받는 이에 대한 설명 및 보내는 이의 마음을 입력하는 곳" 
+                <input 
+                    type="text" 
+                    className="input-box"
+                    placeholder="받는 이에 대한 설명 및 보내는 이의 마음을 입력하는 곳" 
                     value={inputValue}
-                    onChange={handleInputChange}/>
-                </div>
+                    onChange={handleInputChange}
+                />
             </div>
             <div className="btn">
                 <div>

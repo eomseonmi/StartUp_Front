@@ -1,0 +1,44 @@
+fieldset {
+  border: none;
+  width: 70%;
+  margin: 0 auto;
+}
+
+label {
+  font-size: 22px;
+  line-height: 2rem;
+  margin: 2% 2%;
+}
+
+[type="radio"] {
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+  transition: border 0.5s ease-in-out;
+}
+
+[type="radio"]:checked {
+  border: 0.4em solid darkolivegreen;
+}
+
+[type="radio"]:focus-visible {
+  outline: max(2px, 0.1em) dotted darkolivegreen;
+  outline-offset: max(2px, 0.1em);
+}
+
+[type="radio"]:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+  cursor: pointer;
+}
+
+[type="radio"]:hover + img {
+  cursor: pointer;
+}
+
+img {
+  margin: 0px 0px 0px 5px;
+  width: 256px;
+  height: 256px;
+}
