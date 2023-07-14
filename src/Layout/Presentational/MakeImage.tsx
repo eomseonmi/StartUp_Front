@@ -6,9 +6,12 @@ import { Link } from 'react-router-dom';
 import StartupHeader from './StartupHeader';
 import '../../css/Layout.css';
 
-const MakeImage = () => {
-  const [inputValue, setInputValue] = useState(""); // 입력된 값 상태 관리
+const MakeImage = () => {  
   const location = useLocation();
+  const selectedValue = location?.state?.selectedValue;
+
+  const [inputValue, setInputValue] = useState(""); // 입력된 값 상태 관리
+  
   // location.state에서 description 값을 가져옴
   const { description } = location.state || {};
 
