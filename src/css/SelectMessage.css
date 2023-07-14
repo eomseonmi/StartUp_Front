@@ -13,6 +13,7 @@ label {
   line-height: 2rem;
   margin: 2% 2%;
   display: flex;
+  text-align: left;
 }
 
 [type="radio"],

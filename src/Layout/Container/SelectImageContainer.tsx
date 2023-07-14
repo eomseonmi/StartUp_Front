@@ -16,7 +16,7 @@ const SelectImageContainer = () => {
         const description = searchParams.get('description');
         
         if (description) {
-          alert(description);
+          // alert(description);
         //  const response = await axios.get(`http://127.0.0.1:5000/getImage?str=${description}`, { withCredentials: true });
           const response = await axios.get(`http://127.0.0.1:5000/getImageTest?str=${description}`, { withCredentials: true });
           const data = response.data;

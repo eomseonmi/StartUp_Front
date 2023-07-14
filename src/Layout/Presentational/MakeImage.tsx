@@ -19,6 +19,10 @@ const MakeImage = () => {
   const navigate = useNavigate();
 
   const handleCreateImage = () => {
+    if(!inputValue || inputValue === ""){
+      alert("설명을 작성해주세요!");
+      return;
+    }
     const linkToSelectImage = `/selectImage?description=${encodeURIComponent(inputValue)}`;
     navigate(linkToSelectImage);
   };
@@ -35,14 +39,13 @@ const MakeImage = () => {
           <br />
           (ex) 꽃을 들고 있는 부부를 그려줘
         </h1>
-        <div className="ui massive input">
-          <input
-            type="text"
-            placeholder="엽서에 넣고 싶은 그림에 대한 설명을 입력하는 곳"
-            value={inputValue}
-            onChange={handleInputChange}
-          />
-        </div>
+        <input 
+          type="text" 
+          className="input-box"
+          placeholder="엽서에 넣고 싶은 그림에 대한 설명을 입력하는 곳" 
+          value={inputValue}
+          onChange={handleInputChange}
+        />
       </div>
       <div className="btns">
         <div>
