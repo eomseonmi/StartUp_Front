@@ -17,6 +17,11 @@ const StartupMain = () => {
     const navigate = useNavigate();
   
     const handleCreateText = () => {
+        if(!inputValue || inputValue === ""){
+            alert("설명을 작성해주세요!");
+            return;
+        }
+
       const linkToSelectText = `/selectMessage?description=${encodeURIComponent(inputValue)}`;
       navigate(linkToSelectText);
     };

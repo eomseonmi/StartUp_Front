@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React from "react";
 import { Link } from 'react-router-dom';
 
@@ -10,6 +11,7 @@ interface SelectImageProps {
 }
 
 const SelectImage: React.FC<SelectImageProps> = ({ imageUrls }) => {
+  const reloadImage = () => {location.reload();}
   return (
     <>
       <StartupHeader />
@@ -33,9 +35,15 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls }) => {
           <Link to="/makeImage">
             <button className="huge ui left labeled icon button">
               <i className="left arrow icon"></i>
-              다시 만들기
+              설명 다시 작성하기
             </button>
           </Link>
+        </div>
+        <div>
+            <button className="huge ui left labeled icon button" onClick={reloadImage}>
+              <i className="left arrow icon"></i>
+              그림 다시 생성하기
+            </button>
         </div>
         <div>
           <Link to="/showGiftcard"> 

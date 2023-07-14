@@ -1,5 +1,6 @@
+/* eslint-disable no-restricted-globals */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import StartupHeader from './StartupHeader';
 import '../../css/Layout.css';
@@ -10,6 +11,9 @@ type SelectMessageProps = {
 };
 
 const SelectMessage: React.FC<SelectMessageProps> = ({ data }) => {
+  const navigate = useNavigate();
+  const handleCreateImage = () => {navigate("/makeImage");};
+  const reloadMessage = () => {location.reload();}
   return (
     <>
       <StartupHeader />
@@ -25,21 +29,25 @@ const SelectMessage: React.FC<SelectMessageProps> = ({ data }) => {
         </fieldset>
       </div>
       <div className="btns">
-        <div>
+      <div>
           <Link to="/">
             <button className="huge ui left labeled icon button">
               <i className="left arrow icon"></i>
-              다시 만들기
+              설명 다시 작성하기
             </button>
           </Link>
         </div>
         <div>
-          <Link to="/makeImage">
-            <button className="huge ui right labeled icon button">
+            <button className="huge ui left labeled icon button" onClick={reloadMessage}>
+              <i className="redo icon"></i>
+              문구 다시 생성하기
+            </button>
+        </div>
+        <div>
+            <button className="huge ui right labeled icon button" onClick={handleCreateImage}>
               <i className="right arrow icon"></i>
               그림 만들러 가기
             </button>
-          </Link>
         </div>
       </div>
     </>
