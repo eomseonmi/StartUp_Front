@@ -21,14 +21,14 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls }) => {
            <br/>
            마음에 드는 이미지를 골라주세요!
         </h1>
-        <fieldset>
+        <div className="images">
           {imageUrls.map((imageUrl, index) => (
             <label>
               <input type="radio" name="choice" value={index} />
-              <img key={index} src={imageUrl} alt={`Image ${index}`} />
+              <img key={index} src={imageUrl} alt={`img${index}`} />
             </label>
           ))}
-        </fieldset>
+        </div>
       </div>
       <div className="btns">
         <div>
