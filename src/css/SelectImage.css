@@ -1,11 +1,17 @@
-fieldset {
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: center;
   border: none;
   width: 70%;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 label {
-  font-size: 22px;
+  display: flex;
+  width: auto;
   line-height: 2rem;
   margin: 2% 2%;
 }
