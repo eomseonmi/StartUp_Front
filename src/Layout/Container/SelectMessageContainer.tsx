@@ -17,7 +17,6 @@ const SelectMessageContainer = () => {
         if (description) {
           const response = await axios.get(`http://127.0.0.1:5000/getText?str=${description}`, { withCredentials: true });
           const data = response.data;
-          //const datas = data.split("$$");
           const datas = data.split("$$").filter((item: string) => item !== "");
           setData(datas);
         } else {

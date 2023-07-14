@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import StartupHeader from './StartupHeader';
 import '../../css/Layout.css';
@@ -11,9 +11,23 @@ type SelectMessageProps = {
 };
 
 const SelectMessage: React.FC<SelectMessageProps> = ({ data }) => {
+  // const location = useLocation();
   const navigate = useNavigate();
-  const handleCreateImage = () => {navigate("/makeImage");};
-  const reloadMessage = () => {location.reload();}
+  const [selectedValue,setSelectedValue] = useState<number>(-1); // 선택된 값을 저장할 상태]
+  
+  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(event.target.value);
+    setSelectedValue(value);
+    // alert({selectedValue});
+  }
+  const handleCreateImage = () => {
+    navigate("/makeImage", {state: {selectedValue} });
+  }
+
+  const reloadMessage = () => {
+    location.reload();
+  }
+
   return (
     <>
       <StartupHeader />
@@ -22,12 +36,19 @@ const SelectMessage: React.FC<SelectMessageProps> = ({ data }) => {
         <fieldset>
           {data.map((item, index) => (
             <label>
-              <input type="radio" name="choice" value={index} />
+              <input 
+                type="radio" 
+                name="choice" 
+                value={index} 
+                checked={selectedValue === index} 
+                onChange={handleRadioChange} // 라디오 버튼 선택 시 이벤트 핸들러 호출
+              />
               <span>{item}</span>
             </label>
           ))}
         </fieldset>
       </div>
+      <div>{data[selectedValue]}</div>
       <div className="btns">
       <div>
           <Link to="/">

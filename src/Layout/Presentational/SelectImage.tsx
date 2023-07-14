@@ -41,7 +41,7 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls }) => {
         </div>
         <div>
             <button className="huge ui left labeled icon button" onClick={reloadImage}>
-              <i className="left arrow icon"></i>
+              <i className="redo icon"></i>
               그림 다시 생성하기
             </button>
         </div>
