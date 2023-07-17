@@ -7,19 +7,15 @@ import StartupHeader from './StartupHeader';
 import '../../css/Layout.css';
 
 const MakeImage = () => {  
+  const navigate = useNavigate();
   const location = useLocation();
-  const selectedValue = location?.state?.selectedValue;
+  const selectedValue = location?.state?.selectedValue; // 선택한 메시지가 담긴 변수
 
   const [inputValue, setInputValue] = useState(""); // 입력된 값 상태 관리
-  
-  // location.state에서 description 값을 가져옴
-  const { description } = location.state || {};
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value); // 입력된 값 업데이트
   };
-
-  const navigate = useNavigate();
 
   const handleCreateImage = () => {
     if(!inputValue || inputValue === ""){
@@ -27,7 +23,7 @@ const MakeImage = () => {
       return;
     }
     const linkToSelectImage = `/selectImage?description=${encodeURIComponent(inputValue)}`;
-    navigate(linkToSelectImage);
+    navigate(linkToSelectImage, {state: {selectedValue} });
   };
 
   return (
