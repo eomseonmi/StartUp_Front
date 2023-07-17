@@ -1,20 +1,16 @@
 import React, { useState, ChangeEvent } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import '../../css/Layout.css';
 import StartupHeader from './StartupHeader';
 
 const StartupMain = () => {
+    const navigate = useNavigate();
     const [inputValue, setInputValue] = useState(""); // 입력된 값 상태 관리
-    const location = useLocation();
-    // location.state에서 description 값을 가져옴
-    const { description } = location.state || {};
   
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
       setInputValue(e.target.value); // 입력된 값 업데이트
     };
-  
-    const navigate = useNavigate();
   
     const handleCreateText = () => {
         if(!inputValue || inputValue === ""){

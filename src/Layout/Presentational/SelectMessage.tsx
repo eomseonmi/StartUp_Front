@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import StartupHeader from './StartupHeader';
 import '../../css/Layout.css';
@@ -11,15 +11,14 @@ type SelectMessageProps = {
 };
 
 const SelectMessage: React.FC<SelectMessageProps> = ({ data }) => {
-  // const location = useLocation();
   const navigate = useNavigate();
-  const [selectedValue,setSelectedValue] = useState<number>(-1); // 선택된 값을 저장할 상태]
+  const [selectedValue,setSelectedValue] = useState<string>(""); // 선택된 값을 저장할 상태]
   
   const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(event.target.value);
+    const value = event.target.value;
     setSelectedValue(value);
-    // alert({selectedValue});
   }
+  
   const handleCreateImage = () => {
     navigate("/makeImage", {state: {selectedValue} });
   }
@@ -39,8 +38,8 @@ const SelectMessage: React.FC<SelectMessageProps> = ({ data }) => {
               <input 
                 type="radio" 
                 name="choice" 
-                value={index} 
-                checked={selectedValue === index} 
+                value={data[index]} 
+                checked={selectedValue === data[index]} 
                 onChange={handleRadioChange} // 라디오 버튼 선택 시 이벤트 핸들러 호출
               />
               <span>{item}</span>
@@ -48,7 +47,6 @@ const SelectMessage: React.FC<SelectMessageProps> = ({ data }) => {
           ))}
         </fieldset>
       </div>
-      <div>{data[selectedValue]}</div>
       <div className="btns">
       <div>
           <Link to="/">
