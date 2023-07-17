@@ -1,12 +1,31 @@
 .giftcard {
   width: 70%;
-  height: 100%;
+  height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10% auto;
+  margin-top: 10%;
+  margin-left: 15%;
+  /* margin-bottom: 5%; */
 }
 
 .finalImg {
-  margin: 5%;
+  /* margin: 5%; */
+}
+
+.finalTxt {
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.label {
+  display: flex;
+  width: auto;
+  font-size: 24px;
+  text-align: center;
+  justify-content: center;
+  margin: 3% auto;
 }
