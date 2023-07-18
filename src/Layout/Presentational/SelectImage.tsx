@@ -29,7 +29,7 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls }) => {
   return (
     <>
       <StartupHeader />
-      <div className="contents">    
+      <div className="imagecontents">    
         <h1 className="message">
           아래와 같은 엽서 이미지가가 생성됐어요, 
            <br/>
@@ -50,7 +50,7 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls }) => {
           ))}
         </div>
       </div>
-      <div className="btns">
+      <div className="imagebtns">
         <div>
           <Link to="/makeImage">
             <button className="huge ui left labeled icon button">
