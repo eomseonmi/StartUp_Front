@@ -31,7 +31,7 @@ const SelectMessage: React.FC<SelectMessageProps> = ({ data }) => {
     <>
       <StartupHeader />
       <div className="contents">
-        <h1 className="message">아래와 같은 문구가 나왔네요, 마음에 드는 문구를 골라주세요!</h1>
+        <h1 className="message">아래와 같은 문구가 나왔네요, 마음에 드는 문구를 골라주세요!<br></br>문구는 최종 단계에서 편집할 수 있어요.</h1>        
         <fieldset>
           {data.map((item, index) => (
             <label>
