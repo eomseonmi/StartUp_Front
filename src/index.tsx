@@ -9,6 +9,7 @@ import SelectMessageContainer from './Layout/Container/SelectMessageContainer';
 import MakeImageContainer from './Layout/Container/MakeImageContainer';
 import SelectImageContainer from './Layout/Container/SelectImageContainer';
 import ShowGiftcardContainer from './Layout/Container/ShowGiftcardContainer';
+import PrintGiftcardContainer from './Layout/Container/PrintGiftcardContainer';
 
 ReactDOM.render(
     <BrowserRouter>
@@ -18,6 +19,7 @@ ReactDOM.render(
             <Route path="/makeImage" Component={MakeImageContainer} />
             <Route path="/selectImage" Component={SelectImageContainer} />
             <Route path="/showGiftcard" Component={ShowGiftcardContainer} />{' '}
+            <Route path="/print" Component={PrintGiftcardContainer} />{' '}
         </Routes>
     </BrowserRouter>,
     document.getElementById('root')
