@@ -10,7 +10,7 @@ const LoadingBar: React.FC<LoadingBarProps> = ({ isLoading }) => (
   <div className="loading-bar">
     {isLoading && <div className="bar" />}
       <div className="ui active inverted dimmer">
-      <div className="ui massive text loader">AI가 문구를 생성하고 있습니다..</div>
+      <div className="ui massive text loader">AI가 생성 중 입니다.</div>
     <p></p>
 </div>
   </div>
