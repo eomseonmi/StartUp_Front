@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import SelectMessage from "../Presentational/SelectMessage";
 import axios from 'axios';
-import LoadingBarContainer from './LoadingModalContainer';
-import { Loader } from "semantic-ui-react";
-
+import LoadingModalContainer from './LoadingModalContainer';
 
 const SelectMessageContainer: React.FC = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      
       try {
         setLoading(true);
         const searchParams = new URLSearchParams(location.search);
@@ -36,8 +32,13 @@ const SelectMessageContainer: React.FC = () => {
 
     fetchData();
   }, [location]);
-  if (loading) return  <LoadingBarContainer />;
-  return <SelectMessage data={data} />;
+
+  // if (loading) return  <LoadingBarContainer />;
+  // return <SelectMessage data={data} />;
+
+  return (
+    loading ? <LoadingModalContainer /> : <SelectMessage data={data} />
+  );
 };
 
 export default SelectMessageContainer;

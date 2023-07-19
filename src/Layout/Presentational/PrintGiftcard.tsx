@@ -17,15 +17,15 @@ const PrintGiftcard = () => {
       <>
         <StartupHeader />
 
-        <div className="ui people shape" style={{ display: 'flex',marginTop : '100px', justifyContent: 'center', alignItems: 'center'}}>
+        <div className="ui people shape" style={{ display: 'flex',marginTop : '50px', justifyContent: 'center', alignItems: 'center'}}>
         <div className="sides">
          <div className="active side">
-            <div className="ui card" style={{width:'690px', height:'760px'}}>
+            <div className="ui card" style={{width:'600px', height:'700px'}}>
             <div className="image" style={{height:'60%'}}>
-                <img src={selectedImg} style={{width:'690px', marginLeft : '-0.25px'}}/> 
+                <img src={selectedImg} style={{width:'100%', height : '100%', marginLeft : '-0.25px'}}/> 
             </div> 
             <div className="content" style={{height:'30%'}}>
-                 <div className="description" style={{fontSize:'22px' , display: 'flex',alignItems: 'center', height: '100%'}}>{selectedValue}</div>
+                 <div className="description" style={{fontSize:'22px' , display: 'flex',alignItems: 'center', height: '100%'}}><p>{selectedValue}</p></div>
             </div>
             <div className="extra content" style={{height:'10%',fontSize:'20px', fontStyle : 'oblique' ,color:'darkgreen'}}>
                 <span className="right floated"></span> <span> 
@@ -54,7 +54,21 @@ const PrintGiftcard = () => {
         </div>
         </div>
 
+        <div className="printbtn">
 
+                <div>
+
+                    <button className="huge ui right labeled icon button" >
+
+                        <i className="right arrow icon"></i>
+
+                        출력하기
+
+                    </button>
+
+                </div>
+
+        </div>
 
 
 

@@ -37,3 +37,13 @@
   justify-content: center;
   margin: 3% auto;
 }
+
+
+.printbtn {
+
+  display: flex;
+
+  width: 85%;
+
+  margin-left: 70%;
+}
