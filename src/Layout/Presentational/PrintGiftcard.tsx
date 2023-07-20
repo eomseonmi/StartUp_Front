@@ -20,7 +20,7 @@ const PrintGiftcard = () => {
         <div className="ui people shape" style={{ display: 'flex',marginTop : '50px', justifyContent: 'center', alignItems: 'center'}}>
             <div className="sides">
                 <div className="active side">
-                    <div className="ui card" style={{width:'600px', height:'700px'}}>
+                    <div className="ui card" style={{width:'500px', height:'600px'}}>
                         <div className="image" style={{height:'60%'}}>
                             <img src={selectedImg} style={{width:'100%', height : '100%', marginLeft : '-0.25px'}}/> 
                         </div> 
