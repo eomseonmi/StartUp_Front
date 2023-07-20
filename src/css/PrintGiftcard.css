@@ -38,12 +38,9 @@
   margin: 3% auto;
 }
 
-
 .printbtn {
-
+  width: 100%;
   display: flex;
-
-  width: 85%;
-
-  margin-left: 70%;
+  justify-content: center;
+  margin-top: 30px;
 }
