@@ -10,7 +10,7 @@ import '../../css/PrintGiftcard.css';
 const PrintGiftcard = () => {
     const location = useLocation();
 
-    const selectedValue = location?.state?.selectedValue;
+    const selectedValue = location?.state?.inputValue;
     const selectedImg = location?.state?.selectedImg;
 
     return (

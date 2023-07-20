@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, useLocation ,useNavigate} from 'react-router-dom';
 
 
@@ -9,12 +9,18 @@ import '../../css/ShowGiftCard.css';
 const ShowGiftcard = () => {
     const location = useLocation();
     const navigate = useNavigate();
-
+    var inputValue = "" ;
     const selectedValue = location?.state?.selectedValue;
     const selectedImg = location?.state?.selectedImg;
+    const inputRef = useRef<HTMLInputElement>(null);
     
     const handleCreateImage = () => {
-        navigate("/print", {state: {selectedValue,selectedImg} });
+      if (inputRef.current) {
+        inputValue = inputRef.current.value;
+        // 변수에 값이 담겼습니다.
+        console.log('입력 값:', inputValue);
+      }
+        navigate("/print", {state: {inputValue,selectedImg} });
       }
 
     return (
@@ -32,6 +38,7 @@ const ShowGiftcard = () => {
           </div>
           <div className="finalTxt">
             <input
+              ref={inputRef}
               type="text"
               className="input-box"
               defaultValue={selectedValue}
